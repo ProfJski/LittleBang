@@ -1,6 +1,11 @@
 # Little Bang Viewer notes
 ## A data viewer and movie maker for [Little Bang](/README.md)
 
+### Purpose:
+Allows you to view your simulation data from any angle.  
+Plays back larger systems at a more constant frame rate since no calculation time between frames is involved.
+You can output frames of your choice to .png files, which can then be sequenced into a movie -- this gives the smoothest display of large systems
+
 ![Viewer Screenshot](/images/bounce.gif)
 
 ## Instructions for use
@@ -13,7 +18,7 @@
 
 **Top button** simply displays the frame data file name currently displayed.  Quite useful to pare down a set of files to the portion you wish to retain.
 
-**Renderer pause** toggles the player
+**Renderer pause** toggles playback
 
 **Forward** and **Backward** radio buttons which determine the direction of playback.  Useful to pause and rewind.
 
@@ -28,4 +33,20 @@
 ## Bottom bar
 Allows you to jump to any moment in the sequence of frame data you have loaded
 
-## Keyboard controls
+## Keyboard Controls
+### Perspective contols
+In the initial view the camera points towards the origin of the system.  Camera controls use a spherical coordinate system.
+
+**Zoom in and out** - **C** to zoom out, **E** to zoom in.  Updated values are displayed in the text console window.
+**Rotate theta** - **A** rotates negative 10 degrees, **D** positive 10 degrees.  360-degree rotation is possible.
+**Rotate phi** - **Y** rotates positive 10 degrees ("north" on the globe), **H** negative 10 degrees.  Range is limited +180 to -180 degrees.
+
+### Pause and unpause simulation
+**Press F** (for "freeze") to pause and unpause sim.  If you opted to start the sim paused, you need to press F to start it going.  "Render OFF" displays in text console output when frozen, and "Render proceeding" when restarted.
+
+**Press G** to hide the GUI overlay, for example, when making movies
+
+**Press M** toggles whether to output a .png file for every frame displayed, which can be sequenced into a movie
+
+**O** and **P** change playback direction to backward and foreward.
+**K** and **L** subtract or add delay between frames in 10ms increments

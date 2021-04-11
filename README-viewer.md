@@ -6,6 +6,7 @@
 * You can output frames of your choice to .png files, which can then be sequenced into a movie -- this gives the smoothest display of large systems
 
 ![Viewer Screenshot](/images/bounce.gif)
+(*Above: Orbiting green body takes a hard knock at frame ,and gets absorbed into red one.  The other green body slingshots around just afterwards.)
 
 ## Instructions for use
 * Create a directory named `fdata` for the frame data exported by LittleBang.  

@@ -2,9 +2,9 @@
 ## A data viewer and movie maker for [Little Bang](/README.md)
 
 ### Purpose:
-Allows you to view your simulation data from any angle.  
-Plays back larger systems at a more constant frame rate since no calculation time between frames is involved.
-You can output frames of your choice to .png files, which can then be sequenced into a movie -- this gives the smoothest display of large systems
+* Allows you to view your simulation data from any angle.  
+* Plays back larger systems at a more constant frame rate since no calculation time between frames is involved.
+* You can output frames of your choice to .png files, which can then be sequenced into a movie -- this gives the smoothest display of large systems
 
 ![Viewer Screenshot](/images/bounce.gif)
 

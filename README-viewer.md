@@ -19,8 +19,7 @@
 
 **Framerate delay** slider bar: introduces a delay of so many milliseconds between frames.  Basically slow motion for when the action is fast.
 
-**Enlarge small planets** increases the size of particles with mass less than 10 so they are more visible.  Helpful for seeing more distance small masses.  
-Since this program is only a viewer, no frame data is changed.  Particles are simply rendered larger, which may cause them to appear to intersect each other.
+**Enlarge small planets** increases the size of particles with mass less than 10 so they are more visible.  Helpful for seeing more distance small masses.  Since this program is only a viewer, no frame data is changed.  Particles are simply rendered larger, which may cause them to appear to intersect each other.
 
 **Lock Most Massive:** same as in Little Bang.  The camera will remain focused on the most massive particle in the system.
 

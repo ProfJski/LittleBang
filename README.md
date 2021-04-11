@@ -96,17 +96,20 @@ In the initial view the camera points towards the origin of the system.  Camera 
 
 ### Save state options
 **Press 7** to save frame data for the current frame, making it possible to resume from this point.  Note: this is a one-time only save.
+
 **Press 9** to continually save the last frame rendered to disk.  Only a single frame of particle data is saved, but it is overwritten with the most recent data every step of the simulation.
+
 **Press 8** to load from a previously saved point, *which will abandon your current state.*
 These convenience functions have no confirmation dialogue, so be careful.
 
 ## Assumptions and Display Conventions
 **Bodies are color-coded by mass** to assist comprehension of the scene, since distance and perspective make it hard to identify large bodies when they are all the same color.
-*White* = Mass of less than 10
-*Blue* = Mass between 10 and 100
-*Green* = Mass between 100 and 1000
-*Red* = Mass between 1000 and 10000
-*Yellow* = Mass greater than 10000
+
+* *White* = Mass of less than 10
+* *Blue* = Mass between 10 and 100
+* *Green* = Mass between 100 and 1000
+* *Red* = Mass between 1000 and 10000
+* *Yellow* = Mass greater than 10000
 
 **Bodies have uniform density.** A body's mass is the same as its volume.  Consequently its radius relates to its mass by the formula for the volume of a sphere: vol = (4 pi / 3) r^3.  So radius = cuberoot (3 * mass/4 pi).  
 

@@ -146,7 +146,7 @@ These convenience functions have no confirmation dialogue, so be careful.
 This was my first real project in C++ and OpenCL, so I'm sure it has plenty of flaws.  In particular, I bet the OpenCL computation could be better optimized in several ways.  It may also be more performant to render all the spheres to a texture first and then simply display the result.
 
 ## Special thanks 
-to Ramon Santamaria, the author of raylib and raygui, which made coding this program so much easier!
+to Ramon Santamaria, the author of [raylib](https://github.com/raysan5/raylib) and raygui, which made coding this program so much easier!
 
 
 

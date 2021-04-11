@@ -19,6 +19,16 @@ Yet most gravity simulators miss what I feel is the most exciting part: a partic
 * Optional scrolling display of the total kinetic energy of the system
 * Optional mini-map of the whole system
 
+## Little Bang can demonstrate
+* The power of contemporary discete computational physics using only retail hardware
+* Gravitational slingslots and Keplerian orbits
+* How "nebula" of "stars" and "planets" can form from a random distribution of mass exploding outward
+* How initial conditions determine whether the sim universe expands indefinitely, "crunches" back together, or comes to an equilibrium point of expansion
+* How long it takes for a "star" to acquire "planets" in *stable* orbits.  Most "planets" that are captured either spiral down into the star, collide with something else, or escape due to influence of another body.  Yet some stable systems can be observed, and even more rarely, a "moon."
+* Gravitational wobble of "stars" due to their orbiting "planets"
+* The cosmological asymmetry paradox.  If you start with a completely uniform distribution of particles, you will get a completely uniform system, rather unlike the "clumps" and "clusters" of the observable universe, which is more readily obtained from a random initial distribution of particles.
+
+
 The start menu is a good place to begin to play.
 ![Little Bang Start Menu](/images/LB-startmenu.gif)
 
@@ -111,7 +121,33 @@ These convenience functions have no confirmation dialogue, so be careful.
 * *Red* = Mass between 1000 and 10000
 * *Yellow* = Mass greater than 10000
 
-**Bodies have uniform density.** A body's mass is the same as its volume.  Consequently its radius relates to its mass by the formula for the volume of a sphere: vol = (4 pi / 3) r^3.  So radius = cuberoot (3 * mass/4 pi).  
+**Bodies have uniform density.** A body's mass is the same as its volume.  Consequently its radius relates to its mass by the formula for the volume of a sphere: vol = (4 pi / 3) r^3.  So radius = cuberoot (3 * mass/4 pi).  There may be better options but I'm unsure what.
+
+**Minimum effective distance for gravitational force** is simply the sum of the radius of the two bodies concerned.  To explain: when bodies are advanced to their new positions in a new frame, it is possible that they overlap and thus collide.  But the gravitational attraction between the masses is still in effect, and is calculated as usual, using the distance between the centers of the two bodies prior to handling their collision.  When this distance is very small, the resultant force is huge since `F=k (m1 * m2) / r^2`  I.e., if two bodies' centers land in the same spot (thus r --> 0), the force is nearly infinite.  To prevent the absurd result, the gravitational force kernel caps the minimum effective distance at the sum of the radius of the two bodies: the closest they'd get before colliding in real life.
+
+**How collisions are handled.** There's a lot of room for variation and experimentation here.  The relevant logic occurs in the `collision_routine()` function.  Currently here are the rules:
+* Masses smaller than 30 don't shatter, only coalesce
+* If a body of much larger mass collides with a smaller one, the smaller coalesces to the larger.  Currently this happens with a mass ratio greater than 5:1, but the ratio could certainly be larger.
+* Coalescing bodies are handled as a completely inelastic collision.  The resultant particle's momemtum is a vector sum of the incident momenta.
+* Colliding bodies are handled with a two-body, off-center elastic collision equation.  If a mass shatters, it shatters immediately after the collision.
+* On collision both the deflected body and shattered parts are advanced one timestep to avoid immediately colliding again on the next frame.  This is fitting since they are merely detected as coincident on the prior frame.
+
+*Other things I've tried* include: 
+* including a probability factor in whether masses break.  Works fine, just multiplies cases.
+* specifying that bodies with mass greater than X (i.e., > 5000) always coalesce with other bodies.  But this eliminates spectacular collisions of large bodies, which is unrealistic and no fun.  The mass-ratio approach seems more realistic.
+
+*Further ideas* include:
+* Basing the shatter-or-stick logic on momentum rather than velocity.  A small fast-moving bullet-like particle should be more able to shatter a larger body.
+* Adding some way to represent bodies of different density or elastisticity of collision
+
+**Unactivated Code option:** Constantly generate new particles into the system.  Set the variable `spew_on` to `true` to have a steady source of new particles added to the system.  Set `spewstop` to a frame number to automatically terminate the behavior.
+
+## Known shortcomings
+This was my first real project in C++ and OpenCL, so I'm sure it has plenty of flaws.  In particular, I bet the OpenCL computation could be better optimized in several ways.  It may also be more performant to render all the spheres to a texture first and then simply display the result.
+
+## Special thanks 
+to Ramon Santamaria, the author of raylib and raygui, which made coding this program so much easier!
+
 
 
 

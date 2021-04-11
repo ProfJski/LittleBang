@@ -7,6 +7,6 @@ A many-body gravity simulator is a common OpenCL demonstration of how hardware p
 
 Yet most gravity simulators miss what I feel is the most exciting part: a particle cloud coalescing into larger orbiting bodies.  That's what Little Bang provides: masses collide and then they can either recoil, shatter or coalesce together.  Eventually, a cloud of particles gathers into larger bodies.  And if the parameters are just right and you're lucky, you might even get a nice little solar system.
 
-![Little Bang Start Menu)(/image/LB-startmenu.gif)
+![Little Bang Start Menu](/image/LB-startmenu.gif)
 
 

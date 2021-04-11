@@ -1,7 +1,7 @@
 # Little Bang
 ## OpenCL many-body gravity simulator with *collision* and *coalescence*
 
-![Little Bang](/images/LB1.gif)
+![Little Bang](/images/LB1-large.gif)
 
 A many-body gravity simulator is a common OpenCL demonstration of how hardware parallelism can grapple better with the O(n^2) nature of an n-body gravitational system.  It's also a wonderful example of how a discrete computational approach achieves results impossible for traditional analysis.  That's great.
 
